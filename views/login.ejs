@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Task Manager</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="auth-card">
+    <h2>Login</h2>
+    <% if (error) { %>
+      <div class="error-banner"><%= error %></div>
+    <% } %>
+    <form action="/login" method="POST">
+      <div class="field">
+        <label>Username</label>
+        <input type="text" name="username" required>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password" required>
+      </div>
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+    <p style="margin-top: 14px; font-size: 0.85rem;">
+      Need an account? <a href="/register">Register here</a>
+    </p>
+  </div>
+</body>
+</html>

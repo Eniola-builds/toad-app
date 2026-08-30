@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Tasks</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="app-card">
+    <div class="top-bar">
+      <h2>Hello, <%= user.username %></h2>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+
+    <form action="/tasks" method="POST" class="task-form">
+      <input type="text" name="title" placeholder="Add a new task..." required>
+      <button type="submit" class="btn">Add</button>
+    </form>
+
+    <div class="filters">
+      <a href="/tasks?filter=all" class="<%= activeFilter === 'all' ? 'active' : '' %>">All</a>
+      <a href="/tasks?filter=pending" class="<%= activeFilter === 'pending' ? 'active' : '' %>">Pending</a>
+      <a href="/tasks?filter=completed" class="<%= activeFilter === 'completed' ? 'active' : '' %>">Completed</a>
+    </div>
+
+    <div class="task-list">
+      <% if (tasks.length === 0) { %>
+        <p style="text-align: center; color: #9ca3af; padding: 20px 0;">No tasks found.</p>
+      <% } %>
+
+      <% tasks.forEach(task => { %>
+        <div class="task-item <%= task.status === 'completed' ? 'completed' : '' %>">
+          <span><%= task.title %></span>
+          <div class="actions">
+            <% if (task.status === 'pending') { %>
+              <form action="/tasks/<%= task._id %>/status" method="POST" style="display:inline;">
+                <input type="hidden" name="status" value="completed">
+                <button type="submit" class="btn btn-secondary btn-sm">Complete</button>
+              </form>
+            <% } else { %>
+              <form action="/tasks/<%= task._id %>/status" method="POST" style="display:inline;">
+                <input type="hidden" name="status" value="pending">
+                <button type="submit" class="btn btn-secondary btn-sm">Undo</button>
+              </form>
+            <% } %>
+
+            <form action="/tasks/<%= task._id %>/status" method="POST" style="display:inline;">
+              <input type="hidden" name="status" value="deleted">
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[2026-08-30 15:08:18] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster.mongodb.net
+[2026-08-30 15:08:37] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster.mongodb.net
+[2026-08-30 15:10:02] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster.mongodb.net
+[2026-08-30 15:14:35] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster.mongodb.net
+[2026-08-30 15:16:46] ERROR: Database connection failed: connect ECONNREFUSED 127.0.0.1:27017
+[2026-08-30 15:42:06] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cngwrpt.mongodb.net
+[2026-08-30 15:49:04] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cngwrpt.mongodb.net
+[2026-08-30 15:53:21] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cngwrpt.mongodb.net
+[2026-08-30 15:58:07] ERROR: POST /login - 500 - Operation `users.findOne()` buffering timed out after 10000ms
+[2026-08-30 15:58:16] ERROR: Database connection failed: connect ECONNREFUSED 127.0.0.1:27017
+[2026-08-30 16:08:18] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cngwrpt.mongodb.net
+[2026-08-30 16:10:13] ERROR: Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.cluster0.cngwrpt.mongodb.net
+[2026-08-30 16:15:10] ERROR: POST /login - 500 - Operation `users.findOne()` buffering timed out after 10000ms
+[2026-08-30 16:15:18] ERROR: Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-08-30 16:19:51] ERROR: Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-08-30 16:24:00] ERROR: Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-08-30 16:25:52] ERROR: Database connection failed: connect ECONNREFUSED 127.0.0.1:27017
+[2026-08-30 16:27:21] ERROR: Database connection failed: connect ECONNREFUSED 127.0.0.1:27017
+[2026-08-30 16:37:54] ERROR: POST /register - 500 - Operation `users.findOne()` buffering timed out after 10000ms
+[2026-08-30 16:41:35] ERROR: POST /register - 500 - Operation `users.findOne()` buffering timed out after 10000ms
