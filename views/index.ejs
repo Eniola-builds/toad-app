@@ -60,5 +60,24 @@
            
     </div>
   </div>
+
+  <!-- Include Socket.io Client Library -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  // Connect to the WebSocket server
+  const socket = io();
+
+  // Listen for real-time task notifications from server
+  socket.on("taskNotification", (data) => {
+    alert(`Notification: ${data.message}`);
+    // Optionally reload or dynamically update task list
+    setTimeout(() => location.reload(), 1500);
+  });
+
+  socket.on("connect", () => {
+    console.log("Connected to real-time notification socket standard:", socket.id);
+  });
+</script>
+</body>
 </body>
 </html>
