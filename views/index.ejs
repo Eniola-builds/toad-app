@@ -14,6 +14,7 @@
 
     <form action="/tasks" method="POST" class="task-form">
       <input type="text" name="title" placeholder="Add a new task..." required>
+     <input type="datetime-local" name="due_date" required>
       <button type="submit" class="btn">Add</button>
     </form>
 
@@ -27,17 +28,21 @@
       <% if (tasks.length === 0) { %>
         <p style="text-align: center; color: #9ca3af; padding: 20px 0;">No tasks found.</p>
       <% } %>
-
-      <% tasks.forEach(task => { %>
-        <div class="task-item <%= task.status === 'completed' ? 'completed' : '' %>">
-          <span><%= task.title %></span>
+<% tasks.forEach(task => { %>
+        <div class="task-item <%= task.status === 'completed' ? 'completed' : '' %> <%= task.status === 'overdue' ? 'overdue' : '' %>">
+          <div>
+            <span><%= task.title %></span>
+            <% if (task.status === 'overdue') { %>
+              <small style="color: #ef4444; display: block; font-size: 11px; font-weight: bold;">(Overdue)</small>
+            <% } %>
+          </div>
           <div class="actions">
-            <% if (task.status === 'pending') { %>
+            <% if (task.status === 'pending' || task.status === 'overdue') { %>
               <form action="/tasks/<%= task._id %>/status" method="POST" style="display:inline;">
                 <input type="hidden" name="status" value="completed">
                 <button type="submit" class="btn btn-secondary btn-sm">Complete</button>
               </form>
-            <% } else { %>
+            <% } else if (task.status === 'completed') { %>
               <form action="/tasks/<%= task._id %>/status" method="POST" style="display:inline;">
                 <input type="hidden" name="status" value="pending">
                 <button type="submit" class="btn btn-secondary btn-sm">Undo</button>
@@ -51,6 +56,8 @@
           </div>
         </div>
       <% }) %>
+
+           
     </div>
   </div>
 </body>

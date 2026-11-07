@@ -11,9 +11,13 @@ const taskSchema = new mongoose.Schema({
     required: [true, 'Task description cannot be empty'],
     trim: true
   },
+  due_date: {
+    type: Date,
+    required: true
+  },
   status: {
     type: String,
-    enum: ['pending', 'completed', 'deleted'],
+    enum: ['pending', 'completed', 'overdue'],
     default: 'pending'
   }
 }, { timestamps: true });

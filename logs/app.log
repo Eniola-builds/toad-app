@@ -18,3 +18,22 @@
 [2026-08-30 16:27:21] ERROR: Database connection failed: connect ECONNREFUSED 127.0.0.1:27017
 [2026-08-30 16:37:54] ERROR: POST /register - 500 - Operation `users.findOne()` buffering timed out after 10000ms
 [2026-08-30 16:41:35] ERROR: POST /register - 500 - Operation `users.findOne()` buffering timed out after 10000ms
+[2026-11-07 15:32:16] ERROR: POST /login - 500 - Operation `users.findOne()` buffering timed out after 10000ms
+[2026-11-07 15:40:19] INFO: New user registered: Eniola
+[2026-11-07 15:40:32] WARN: Failed login attempt for user: Eniola
+[2026-11-07 15:40:43] WARN: Failed login attempt for user: Eniola
+[2026-11-07 15:41:12] INFO: New user registered: niola
+[2026-11-07 15:41:23] INFO: User authenticated: niola
+[2026-11-07 15:44:55] ERROR: POST /tasks - 500 - Task validation failed: due_date: Path `due_date` is required.
+[2026-11-07 15:45:13] INFO: User authenticated: niola
+[2026-11-07 15:59:57] ERROR: POST /tasks - 500 - Task validation failed: due_date: Path `due_date` is required.
+[2026-11-07 16:03:20] INFO: User authenticated: niola
+[2026-11-07 16:03:48] ERROR: POST /tasks - 500 - Task validation failed: due_date: Path `due_date` is required.
+[2026-11-07 16:07:17] INFO: User authenticated: niola
+[2026-11-07 16:07:38] INFO: Task created by user niola
+[2026-11-07 16:10:11] INFO: Task created by user niola
+[2026-11-07 16:10:57] INFO: Task created by user niola
+[2026-11-07 16:10:59] INFO: Task 6aef3f81e4079dcccb6d91dc marked as completed by niola
+[2026-11-07 16:14:53] INFO: Task created by user niola
+[2026-11-07 16:44:36] INFO: User authenticated: niola
+[2026-11-07 16:45:09] INFO: Task 6aef3f81e4079dcccb6d91dc marked as deleted by niola

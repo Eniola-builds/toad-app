@@ -27,7 +27,7 @@ exports.getTasks = async (req, res, next) => {
 
 exports.createTask = async (req, res, next) => {
   try {
-    const { title } = req.body;
+    const { title, due_date} = req.body;
 
     if (!title || !title.trim()) {
       return res.redirect('/tasks');
@@ -35,7 +35,8 @@ exports.createTask = async (req, res, next) => {
 
     await Task.create({
       user: req.session.user.id,
-      title: title.trim()
+      title: title.trim(),
+      due_date: new Date(due_date)
     });
 
     logger.info(`Task created by user ${req.session.user.username}`);
